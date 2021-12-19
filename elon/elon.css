@@ -1,10 +1,66 @@
 body {
   margin: 0;
-  background-color: #e8a86e;
-  overflow: hidden;
   font-family: Super-Mario-World;
 }
 
+.explain{
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25vh;
+  padding-top: 20vh;
+}
+
+.typer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8vh;
+}
+
+h3, .wrap, .wrap_2, .wrap_3, .typewrite, 
+.typewrite_2, .typewrite_3{
+  color: white;
+  width: auto;
+  height: auto;
+  margin: 0;
+  text-align: center;
+  font-size: 18pt;
+  text-decoration: none;
+}
+
+.presentation { 
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  gap: 5vw;
+}
+.elon_head{
+  width: 90px;
+}
+
+.cross{
+  width: 48px;
+  height: 48px;
+}
+
+.elon_pres{
+  transform: translateY(3px);
+  margin: 0;
+}
+
+
+#playGround{
+  display: none;
+  background-color: #e8a86e;
+  overflow: hidden;
+}
 
 .ratio{
   width: 1vw;
@@ -125,7 +181,9 @@ h1 {
   background-position: center;
   width: 85px;
   height: 85px;
-  left: 760px;
+  margin: 0 auto;
+     right: 0;
+     left: 0;
   top: 33vh;
   transition: all 0.05s ease-out;
   z-index: 9998;
@@ -139,7 +197,10 @@ h1 {
   width: 425px;
   height: 75px;
   top: 33vh;
-  left: 590px;
+  margin: auto;
+     right: 0;
+     left: 0;
+
 }
 
 .elon {
@@ -151,7 +212,9 @@ h1 {
   width: 103px;
   height: 180px;
   bottom: 150px;
-  left: 747px;
+  margin: 0 auto;
+     right: 0;
+     left: 0;
 }
 
 .coin {
@@ -175,7 +238,9 @@ h1 {
   background-position: center;
   width: 126px;
   height: 137px;
-  left: 735px;
+  margin: 0 auto;
+     right: 0;
+     left: 0;
 }
 
 .colision {
@@ -190,27 +255,34 @@ h1 {
   display: none;
 }
 
-.info {
-  position: absolute;
+.info{
+  padding-top: 5vh;
+}
+
+/* 
+.wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 20vw;
-  width: 100vw;
+  width: max-content;
   height: auto;
   padding-top: 5vh;
-}
+} */
 
 .counter {
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1vw;
+  left: 15vw;
 }
 
 h2,
-#countdown {
+#countdown,
+#score {
   font-size: xx-large;
   text-transform: uppercase;
   margin: 0;
@@ -232,8 +304,11 @@ button {
 }
 
 .game {
+  position: absolute;
   flex-direction: column;
   text-align: center;
+  left: 45%;
+  right: 45%
 }
 
 #gameNone {
@@ -242,9 +317,12 @@ button {
 
 
 .time {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
+  right: 15vw;
+
 }
 
 #cache {
