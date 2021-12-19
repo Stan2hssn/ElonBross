@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    height: 100vh;
+    cursor: none;
+    background-color: rgb(27, 27, 27);
+}
+
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
+
+.cursor .cursor-pointer_dot {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+    border: 1px solid white;
+    background-color: white;
+    transform: scale(1);
+}
+
+.cursor.cursor.pressed .cursor-pointer_dot {
+    transform: scale(4);
+    border: .1px solid white;
+    background-color: transparent;
+}
+
+.cursor.pressed .cursor-pointer_arrows {
+    transform: translateY(-3px) scale(1.5);
+}
+
+.cursor .cursor-pointer_arrows::after,
+.cursor .cursor-pointer_arrows::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    width: 40px;
+    height: 10px;
+    background-image: url("img/SVG/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.cursor .cursor-pointer_arrows::before {
+    left: -60px;
+}
+
+.cursor .cursor-pointer_arrows::after {
+    right: -60px;
+    transform: rotate(180deg);
+}
+
+.cursor.pressed .cursor-pointer_arrows::after {
+    transform: rotate(180deg) translateX(-10px);
+}
+
+.cursor.pressed .cursor-pointer_arrows::before {
+    transform: translateX(-10px);
+}
+
+.button {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    width: 100px;
+    height: 20px;
+    background-color: olive;
+}
+
+#elon {
+    position: absolute;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    left: 50vw;
+    bottom: 0px;
+    transition: all 0.5s ease;
+}
