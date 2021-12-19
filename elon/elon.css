@@ -1,0 +1,290 @@
+body {
+  margin: 0;
+  background-color: #e8a86e;
+  overflow: hidden;
+  font-family: Super-Mario-World;
+}
+
+
+.ratio{
+  width: 1vw;
+  height: 1vh;
+}
+
+@font-face {
+  font-family: Super-Mario-World;
+  src: url(/Super-Mario-World.ttf);
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.background_flex {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+  align-items: center;
+}
+
+.ground {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+
+.horizon {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  height: auto;
+}
+
+.big_cloud {
+  position: absolute;
+  width: auto;
+  height: 180px;
+  top: 5vh;
+  left: 5vw;
+}
+
+.small_cloud {
+  position: absolute;
+  width: auto;
+  height: 180px;
+  top: 10vh;
+  right: 10vw;
+}
+
+.cloud {
+  position: absolute;
+  width: auto;
+  height: 100px;
+  top: 25vh;
+  right: 30vw;
+}
+
+.little_cloud {
+  will-change: transform;
+  position: absolute;
+  width: auto;
+  height: 100px;
+  top: 32vh;
+  left: 30vw;
+}
+
+.block_1 {
+  background-image: url(img/items/Block2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 85px;
+  height: 85px;
+}
+
+.block_2 {
+  background-image: url(img/items/Block1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 85px;
+  height: 85px;
+}
+
+.block_3 {
+  background-image: url(img/items/Block1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 85px;
+  height: 85px;
+}
+
+.block_4 {
+  background-image: url(img/items/Block1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 85px;
+  height: 85px;
+}
+
+.wrapper_block {
+  display: flex;
+  flex-direction: row;
+}
+
+.block {
+  position: absolute;
+  background-image: url(img/items/BlockTesla.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 85px;
+  height: 85px;
+  left: 760px;
+  top: 33vh;
+  transition: all 0.05s ease-out;
+  z-index: 9998;
+}
+
+.wrapper_block_justify {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 425px;
+  height: 75px;
+  top: 33vh;
+  left: 590px;
+}
+
+.elon {
+  position: absolute;
+  background-image: url(img/items/Elon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 103px;
+  height: 180px;
+  bottom: 150px;
+  left: 747px;
+}
+
+.coin {
+  position: absolute;
+  background-image: url(img/items/ElonBrosAnim.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  left: 1238px;
+  top: 420px;
+  transition: all 0.3s ease-in-out;
+  animation-play-state: paused;
+}
+
+.fly {
+  background-image: url(img/items/ElonJump.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 126px;
+  height: 137px;
+  left: 735px;
+}
+
+.colision {
+  transform: translateY(-10px);
+}
+
+.coinout {
+  transform: translateY(-200px);
+}
+
+.pause {
+  display: none;
+}
+
+.info {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20vw;
+  width: 100vw;
+  height: auto;
+  padding-top: 5vh;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+h2,
+#countdown {
+  font-size: xx-large;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  width: fit-content;
+  background-color: black;
+  color: white;
+  font-size: 18pt;
+  padding-top: 16px !important;
+  padding: 8px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Super-Mario-World;
+  align-self: center;
+}
+
+.game {
+  flex-direction: column;
+  text-align: center;
+}
+
+#gameNone {
+  display: none;
+}
+
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cache {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 48px;
+}
+
+.launcher {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.box {
+  align-self: center;
+  width: 800px;
+}
+
+.action_button {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+a {
+  align-self: center;
+  width: max-content;
+}
+
+.coinInfo {
+  width: 4vw;
+}
+
+.multiplicator{
+  object-position: center;
+  object-fit: cover;
+  width: 3vw;
+}
