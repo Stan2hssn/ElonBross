@@ -1,3 +1,4 @@
+
 const littleCloud = document.querySelector(".little_cloud");
 const cloud = document.querySelector(".cloud");
 const smallCloud = document.querySelector(".small_cloud");
@@ -16,19 +17,10 @@ let startPlaying = () => {
 
   let blockRect;
   let elonRect;
-  let count = 0;
 
   let velocity = 0.0;
   let isGrounded = true;
   let coin = document.querySelector(".coin");
-
-  document.body.onkeydown = function (y) {
-    if (y.keyCode == 13) {
-      isPlaying = true;
-      setInterval(updateCountdown, 1000)
-      console.log(isPlaying);
-    }
-  };
 
   if ((isPlaying = true)) {
     let startingMinutes = 1;
@@ -46,7 +38,49 @@ let startPlaying = () => {
       countDownEl.innerHTML = `${minutes} : ${seconds}`;
 
       time--;
+
+      if (time == 0) {
+        countDownEl.innerHTML = `0`;
+        isPlaying == false
+
+      }
     }
+
+    let count = 0;
+
+    const getCount = document.querySelector('#score')
+
+    function score() {
+
+
+      getCount.innerHTML = `${count}`
+
+      console.log(count)
+
+    }
+
+    setTimeout(function (n) {
+      var f = function (e) {
+        var c = e.which || e.keyCode;
+        if (c == 13) {
+          e.preventDefault();
+          return false;
+        }
+      };
+
+
+
+      document.body.onkeydown = function (y) {
+        if (y.keyCode == 13 && isPlaying == false) {
+          isPlaying = true;
+          setInterval(updateCountdown, 1000)
+          document.querySelector(".explain").style.display = "none";
+          document.querySelector("#playGround").style.display = "block";
+          console.log(isPlaying);
+        }
+      };
+    }, 12200);
+
 
 
 
@@ -126,6 +160,7 @@ let startPlaying = () => {
         block.classList.add("colision");
 
         count++;
+        score();
       }
     };
 
@@ -149,7 +184,6 @@ let startPlaying = () => {
 
         isGrounded = false;
 
-        setInterval(updateCountdown, 5000)
       }
     };
 
