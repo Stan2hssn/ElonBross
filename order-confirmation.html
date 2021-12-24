@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/elon/css/pay.css">
+    <title>Elon Bross</title>
+</head>
+
+<body>
+    <header>
+        <img width="100px" height="100px" src="/elon/img/fake/téléchargement.png" alt="">
+        <img src="/elon/img/fake/visa-verified-logo.png" alt="">
+        <img class="information_img" fill="white" src="/elon/img/fake/information_80897.svg" alt="">
+    </header>
+
+
+    <section>
+
+        <div class="loader-2">
+            <h1 id="change2">Autentification en cours</h1>
+            <p id="change">Veuillez vous authentifier grâce à votre Pass Sécurité</p>
+            <button id="change3" style="display: none"><a href="index.html"><img width="75px;"
+                        src="/elon/img/fake/back_icon-icons.com_71028.svg" alt=""></a></button>
+            <div class="lds">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="valider">
+            <h2 id="validation">Valider votre opération</h2>
+            <p>Pour vous protéger ontre l'utilisation froduleuse de votre carte banquaire,
+                la sociéte générale demande de vous autentifier en saisissant votre code
+                sécurité reçu sur votre téléphone.</p>
+        </div>
+
+        <div class="info">
+            <div class="information">
+                <div class="left">
+                    Marchand :
+                </div>
+                <div class="right">
+                    Sound Pixel
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="left">
+                    Montant :
+                </div>
+                <div class="score">
+                    5830718,99 €
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="left">
+                    Date
+                </div>
+                <div class="right">
+                    <p id="date"></p>
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="left">
+                    N° de carte:
+                </div>
+                <div class="right">
+                    xxxxxxxxxxxx2083
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="left">
+                    N° de téléphone:
+                </div>
+                <div class="right">
+                    0652843XXX
+                </div>
+            </div>
+        </div>
+        <footer>
+            <img class="img_center" src="/elon/img/fake/pass_securite_4_20180821152355.png" alt="">
+            <button onclick="nope()">
+                <img width="20px"
+                    src="/elon/img/fake/kisspng-computer-icons-font-awesome-ban-clip-art-forbidden-icon-5adf6fbddf7f03.2877410515245925739155.png"
+                    alt="">
+                Ne pas m'identifier et annuler votre opération
+            </button>
+            <button onclick="help()">
+                <img width="20px" src="/elon/img/fake/information_80897 copie.svg" alt="">
+                Aide
+            </button>
+        </footer>
+        <p id='p1'></p>
+
+        <div class="aide">
+            <p>Si le paiement s'est bien confirmé cliquez sur la flèche pour retourner sur notre site et nous filer
+                encore plus de moula $v$</p>
+        </div>
+
+    </section>
+    <script>
+        setInterval(function () {
+            document.querySelector(".lds").style.display = "none";
+            document.querySelector(".loader-2").style.backgroundColor = "#26D701";
+            document.querySelector("#change2").innerHTML = `Confirmation du paiement`
+            document.querySelector("#validation").innerHTML = `Opération validé`
+            document.querySelector("#change").innerHTML = `Vous allez être redirigé vers le site de cette incroyable équipe qui vous a arnaqué ;)`
+            document.querySelector(".loader-2").style.backgroundColor = "#26D701";
+            const changer = document.querySelector("#change3").style.display = "block";
+
+            setInterval(function () {
+                window.location.href = "index.html";
+            }, 3000);
+
+        }, 2000);
+
+        function nope() {
+            alert('Dont break my game mot*** Fuc*** !')
+        }
+
+        function help() {
+            document.querySelector(".aide").style.display = "flex";
+        }
+
+        let date1 = new Date();
+
+        let dateLocale = date1.toLocaleString('fr-FR', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric'
+        });
+
+        document.querySelector('#date').innerHTML = dateLocale;
+
+    </script>
+</body>
+
+</html>
