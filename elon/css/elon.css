@@ -186,7 +186,7 @@ h1 {
      right: 0;
      left: 0;
   top: 33vh;
-  transition: all 0.05s ease-out;
+  transition: all 0.005s ease-in;
   z-index: 9998;
 }
 

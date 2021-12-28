@@ -164,6 +164,12 @@ let startPlaying = () => {
         block.classList.add("colision");
 
         console.log(count);
+
+        blockRect = block.getBoundingClientRect();
+      let bottom = blockRect.bottom;
+
+
+
         count += 100;
         score();
       }
