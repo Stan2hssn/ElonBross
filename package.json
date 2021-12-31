@@ -2,5 +2,8 @@
   "dependencies": {
     "jquery": "^3.6.0",
     "typed.js": "^2.0.12"
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
   }
 }

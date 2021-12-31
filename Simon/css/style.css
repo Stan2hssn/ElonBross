@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btn {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: 1242px;
+  top: 617px;
+  width: 94px;
+  height: 99px;
+}
+
+.on {
+  background-image: url("/Simon/img/Layer 15 copy 5.png") !important;
+}
+
+#turn {
+  position: absolute;
+  color: red;
+  font-family: Super-Mario-World;
+  font-size: 64pt;
+  padding-top: 20px;
+}
+
+.count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 37px;
+  width: 324px;
+  height: 100px;
+  background: #330000;
+}
+/* 
+#outer-circle {
+  background: #385a94;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  border-style: solid;
+  border-width: 10px;
+  margin: auto;
+  margin-top: 60px;
+  box-shadow: 8px 8px 15px 5px #888888;
+} */
+
+#topleft {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 250px 0 0 0;
+  -moz-border-radius: 250px 0 0 0;
+  -webkit-border-radius: 250px 0 0 0;
+  background: darkgreen;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0px 0px -250px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#topright {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 0 250px 0 0;
+  -moz-border-radius: 0 250px 0 0;
+  -webkit-border-radius: 0 250px 0 0;
+  background: darkred;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0px 0px 0px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#bottomleft {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 0 0 0 250px;
+  -moz-border-radius: 0 0 0 250px;
+  -webkit-border-radius: 0 0 0 250px;
+  background: goldenrod;
+  top: 50%;
+  left: 50%;
+  margin: 0px -250px 0px -250px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#bottomright {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 0 0 250px 0;
+  -moz-border-radius: 0 0 250px 0;
+  -webkit-border-radius: 0 0 250px 0;
+  background: darkblue;
+  top: 50%;
+  left: 50%;
+  margin: 0px 0px -250px 0px;
+  border-style: solid;
+  border-width: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#inner-circle {
+  position: absolute;
+  background: grey;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  border-style: solid;
+  border-width: 10px;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0px 0px -125px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.column {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 141px;
+  left: 468px;
+  width: max-content;
+  height: 609px;
+}
+
+.grid,
+.grid2,
+.grid3,
+.grid4 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  gap: 35px;
+}
+
+.grid {
+  width: 572px;
+  height: 519px;
+}
+
+.grid2 {
+  width: 572px;
+  height: 519px;
+}
+
+.grid3 {
+  width: 572px;
+  height: 519px;
+}
+
+.grid4 {
+  width: 572px;
+  height: 519px;
+}
+
+.box {
+  width: 111px;
+  height: 111px;
+  background-color: transparent;
+  border: none;
+}
+
+.actived1 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate16.png);
+  background-position: center;
+}
+
+.actived2 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate1.png);
+  background-position: center;
+}
+
+.actived3 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate2.png);
+  background-position: center;
+}
+
+.actived4 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate3.png);
+  background-position: center;
+}
+
+.actived5 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate4.png);
+  background-position: center;
+}
+
+.actived6 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate5.png);
+  background-position: center;
+}
+
+.actived7 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate6.png);
+  background-position: center;
+}
+
+.actived8 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate7.png);
+  background-position: center;
+}
+
+.actived9 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate8.png);
+  background-position: center;
+}
+
+.actived10 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate9.png);
+  background-position: center;
+}
+
+.actived11 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate10.png);
+  background-position: center;
+}
+
+.actived12 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate11.png);
+  background-position: center;
+}
+
+.actived13 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate12.png);
+  background-position: center;
+}
+
+.actived14 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate13.png);
+  background-position: center;
+}
+
+.actived15 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate14.png);
+  background-position: center;
+}
+
+.actived16 {
+  background-image: url(/Simon/Pads/Pads_NotActivate/NotActivate15.png);
+  background-position: center;
+}
+
+.clicked1 {
+  background-image: url(/Simon/Pads/Fichier\ 16.png);
+  background-position: center;
+}
+
+.clicked2 {
+  background-image: url(/Simon/Pads/Fichier\ 1.png);
+  background-position: center;
+}
+
+.clicked3 {
+  background-image: url(/Simon/Pads/Fichier\ 2.png);
+  background-position: center;
+}
+
+.clicked4 {
+  background-image: url(/Simon/Pads/Fichier\ 3.png);
+  background-position: center;
+}
+
+.clicked5 {
+  background-image: url(/Simon/Pads/Fichier\ 4.png);
+  background-position: center;
+}
+
+.clicked6 {
+  background-image: url(/Simon/Pads/Fichier\ 5.png);
+  background-position: center;
+}
+
+.clicked7 {
+  background-image: url(/Simon/Pads/Fichier\ 6.png);
+  background-position: center;
+}
+
+.clicked8 {
+  background-image: url(/Simon/Pads/Fichier\ 7.png);
+  background-position: center;
+}
+
+.clicked9 {
+  background-image: url(/Simon/Pads/Fichier\ 8.png);
+  background-position: center;
+}
+
+.clicked10 {
+  background-image: url(/Simon/Pads/Fichier\ 9.png);
+  background-position: center;
+}
+
+.clicked11 {
+  background-image: url(/Simon/Pads/Fichier\ 10.png);
+  background-position: center;
+}
+
+.clicked12 {
+  background-image: url(/Simon/Pads/Fichier\ 11.png);
+  background-position: center;
+}
+
+.clicked13 {
+  background-image: url(/Simon/Pads/Fichier\ 12.png);
+  background-position: center;
+}
+
+.clicked14 {
+  background-image: url(/Simon/Pads/Fichier\ 13.png);
+  background-position: center;
+}
+
+.clicked15 {
+  background-image: url(/Simon/Pads/Fichier\ 14.png);
+  background-position: center;
+}
+
+.clicked16 {
+  background-image: url(/Simon/Pads/Fichier\ 15.png);
+  background-position: center;
+}
