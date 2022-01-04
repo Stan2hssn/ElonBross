@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+}
+
+#result {
+  display: none;
+  z-index: 9999;
+  color: white;
+}
+
+.background_result {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/elon/img/elon_resultat/Fond_N&B.jpg);
+  filter: brightness(30%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.elon_result {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 1100px;
+  height: auto;
+}
+
+#timeOut {
+  position: absolute;
+  opacity: 0;
+  color: white;
+  height: max-content;
+  z-index: 9999;
+  text-align: center;
+  font-size: 126pt;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: all 0.5s ease-in;
+}
+
+.fadeIn {
+    opacity: 0.5 !important;
+}
+
+.your-result {
+  font-size: xx-large;
+  margin: none;
+}
+
+.row_result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 32px;
+}
+
+.score_result {
+  font-size: 60pt;
+  margin: 0;
+}
+
+.bitcoin {
+  background-image: url(/elon/img/elon_resultat/Bitcoin.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 92px;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+button {
+  width: 177px;
+  height: 88px;
+  transform: scale(0.9);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.column_result {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  top: 50vh;
+  left: 47vw;
+  gap: 24px;
+}
+
+.gap {
+    gap: 34px;
+}
+
+.row_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  gap: 13vw;
+}
+
+.recommencer {
+  background-image: url(/elon/img/elon_resultat/Recommencer.png);
+  transform-origin: left;
+}
+
+.poursuivre {
+  background-image: url(/elon/img/elon_resultat/Poursiovre.png);
+  transform-origin: right;
+}

@@ -1,20 +1,16 @@
-
 const littleCloud = document.querySelector(".little_cloud");
 const cloud = document.querySelector(".cloud");
 const smallCloud = document.querySelector(".small_cloud");
 const bigCloud = document.querySelector(".big_cloud");
 const block = document.querySelector(".block");
 const elon = document.querySelector(".elon");
-const gameStart = document.querySelector('.gameStart');
-
+const gameStart = document.querySelector(".gameStart");
+const timeOut = document.querySelector("#timeOut");
 
 let isPlaying = false;
 console.log(isPlaying);
 
-function end(){
-  console.log("end")
-}
-
+// end();
 let startPlaying = () => {
   const jumpForce = 10.0;
   const gravity = 0.2;
@@ -32,11 +28,8 @@ let startPlaying = () => {
 
     const countDownEl = document.querySelector("#countdown");
 
-
-
     function updateCountdown() {
-
-      if (isPlaying = true) {
+      if (isPlaying == true) {
         const minutes = Math.floor(time / 60);
         let seconds = time % 60;
 
@@ -45,21 +38,52 @@ let startPlaying = () => {
         countDownEl.innerHTML = `${minutes} : ${seconds}`;
 
         time--;
-          if (time <! 1 ) {
-            countDownEl.innerHTML = `0 : 00`;
-            isPlaying = false;
+
+        if (time < 5 && isPlaying == true) {
+          countDownEl.classList.add("big");
+        }
+
+        if (time < !1 && isPlaying == true) {
+          countDownEl.innerHTML = `0 : 00`;
+          isPlaying = false;
+          countDownEl.classList.remove("big");
+          fadeIn();
+          setTimeout(function () {
             end();
-          }
+          }, 500);
+        }
       }
+    }
+
+    function fadeIn() {
+      timeOut.classList.add("fadeIn");
     }
 
     let count = 0;
 
-    const getCount = document.querySelector('#score')
+    const getCount = document.querySelector("#score");
 
     function score() {
-      getCount.innerHTML = `${count}`
+      getCount.innerHTML = `${count}`;
+    }
 
+    function end() {
+      console.log("finish");
+      document.querySelector(".explain").style.display = "none";
+      document.querySelector("#playGround").style.display = "none";
+      document.querySelector("#result").style.display = "block";
+      block.style.display = "none";
+      document.body.style.cursor = "auto";
+      if (count > 100) {
+        document.querySelector(".score_result").innerHTML = count;
+        coin.style.display = "none";
+      } else {
+        document.querySelector(".score_result").innerHTML = "You suck !";
+        document.querySelector(".score_result").style.fontSize = "48pt";
+        // document.querySelector(".score_result").classList.add("translate");
+        document.querySelector(".bitcoin").style.display = "none";
+        document.querySelector(".column_result").classList.add("gap");
+      }
     }
 
     setTimeout(function (n) {
@@ -71,21 +95,16 @@ let startPlaying = () => {
         }
       };
 
-
-
       document.body.onkeydown = function (y) {
         if (y.keyCode == 13 && isPlaying == false) {
           isPlaying = true;
-          setInterval(updateCountdown, 1000)
+          setInterval(updateCountdown, 1000);
           document.querySelector(".explain").style.display = "none";
           document.querySelector("#playGround").style.display = "block";
           console.log(isPlaying);
         }
       };
     }, 0);
-
-
-
 
     let update = () => {
       requestAnimationFrame(update);
@@ -138,11 +157,12 @@ let startPlaying = () => {
 
       div.className = "coin";
 
-      document.body.appendChild(div);
+      document.body.appendChild(block);
+
       false;
     }
 
-    console.log(blockRect)
+    console.log(blockRect);
 
     let init = () => {
       requestAnimationFrame(init);
@@ -158,7 +178,7 @@ let startPlaying = () => {
 
       if (top < bottom) {
         // coin.classList.add(".coinout")
-        
+
         velocity = 0;
 
         block.classList.add("colision");
@@ -166,9 +186,7 @@ let startPlaying = () => {
         console.log(count);
 
         blockRect = block.getBoundingClientRect();
-      let bottom = blockRect.bottom;
-
-
+        let bottom = blockRect.bottom;
 
         count += 100;
         score();
@@ -194,7 +212,6 @@ let startPlaying = () => {
         velocity -= jumpForce;
 
         isGrounded = false;
-
       }
     };
 
@@ -205,12 +222,12 @@ let startPlaying = () => {
 
 startPlaying();
 
-
-/////////////////////////////NUAGES/////////////////////////////
+// ^nuages //
 
 document.addEventListener("mousemove", (e) => {
-  littleCloud.style.transform = `translate(${e.clientX / 20}px, ${e.clientY / 20
-    }px)`;
+  littleCloud.style.transform = `translate(${e.clientX / 20}px, ${
+    e.clientY / 20
+  }px)`;
 });
 
 document.addEventListener("mousemove", (e) => {
@@ -218,11 +235,13 @@ document.addEventListener("mousemove", (e) => {
 });
 
 document.addEventListener("mousemove", (e) => {
-  smallCloud.style.transform = `translate(${e.clientX / 25}px, ${e.clientY / 25
-    }px)`;
+  smallCloud.style.transform = `translate(${e.clientX / 25}px, ${
+    e.clientY / 25
+  }px)`;
 });
 
 document.addEventListener("mousemove", (e) => {
-  bigCloud.style.transform = `translate(${e.clientX / 30}px, ${e.clientY / 30
-    }px)`;
+  bigCloud.style.transform = `translate(${e.clientX / 30}px, ${
+    e.clientY / 30
+  }px)`;
 });

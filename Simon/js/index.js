@@ -5,7 +5,7 @@ let turn;
 let good;
 let compTurn;
 let intervalId;
-let strict = true;
+let strict = false;
 let noise = true;
 let on = false;
 let win;
@@ -45,7 +45,7 @@ startButton.addEventListener("click", (event) => {
     compTurn = false;
     noneColor();
     on = false;
-    turnCounter.innerHTML = '';
+    turnCounter.innerHTML = "";
   }
 });
 
@@ -175,7 +175,6 @@ function flashColor() {
   flashFourTeen();
   flashFivTeen();
   flashSixTeen();
-
 }
 
 function check() {
@@ -189,12 +188,10 @@ function check() {
   if (good == false) {
     flashColor();
     turnCounter.innerHTML = "NO!";
-   
-    
+
     setTimeout(() => {
       turnCounter.innerHTML = turn;
       clearColor();
-
 
       if (strict) {
         play();
@@ -206,7 +203,7 @@ function check() {
         intervalId = setInterval(gameTurn, 800);
       }
     }, 800);
-    
+
     noise = false;
   }
 

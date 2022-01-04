@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/elon/css/elon.css">
     <link rel="stylesheet" href="/elon/css/body.css">
+    <link rel="stylesheet" href="/elon/css/result.css">
     <script src="elon.js" async></script>
 
     <title>Elon BROSS</title>
@@ -23,23 +24,22 @@
         <div class="typer">
             <h3>
                 <a href="" class="typewrite" data-period="2000" data-type='[ "Aidez Elon a conquerir mars !" ]'>
-                  <span class="wrap"></span>
+                    <span class="wrap"></span>
                 </a>
-              </h3>
-              <h3>
+            </h3>
+            <h3>
                 <a href="" class="typewrite_2" data-period="5000" data-type='[ "Appuyer sur espace pour taper le bloc et recuperer des bitcoins" ]'>
-                  <span class="wrap_2"></span>
+                    <span class="wrap_2"></span>
                 </a>
-              </h3>
-              <h3>
+            </h3>
+            <h3>
                 <a href="" class="typewrite_3" data-period="2000" data-type='[ "Appuyer sur entrer pour commencer" ]'>
-                  <span class="wrap"></span>
+                    <span class="wrap"></span>
                 </a>
-              </h3>
+            </h3>
         </div>
     </div>
 
-    <div class="ratio"></div>
     <div id="playGround">
         <div>
             <section class="background_flex">
@@ -70,37 +70,56 @@
                 <div id="countdown">0 : 30</div>
             </div>
         </div>
-
-
+        
+        
         <div class="elon"></div>
-
-
+        
+        <h1 id="timeOut">Time Out</h1>
+        
         <div class="wrapper_block_justify">
-
+            
             <div class="wrapper_block">
-
+                
                 <div class="block_1"></div>
-
+                
                 <div class="block_2"></div>
-
+                
             </div>
             <div class="wrapper_block">
                 <div class="block_3"></div>
                 <div class="block_4"></div>
             </div>
         </div>
-
-        <div id="block" class="block"></div>
-    </div>
-
-
-    <div class="result">
         
+        <div id="block" class="block"></div>
+        <!-- <div class="coin"></div> -->
     </div>
-    <!-- <div class="coin"></div> -->
+    
+
+    <div id="result">
+        <img class="background_result" src="/elon/img/elon_resultat/Fond_N&B.jpg" alt="" />
+        <img class="elon_result" src="elon/img/elon_resultat/ElonLike_1.svg" alt="" />
+
+        <div class="column_result">
+            <h2 class="your_result">Your score :</h2>
+            <div class="row_result">
+
+                <p class="score_result"></p>
+                <div class="bitcoin"></div>
+
+            </div>
+            <div class="row_button">
+
+                <button onClick="window.location.reload();" class="recommencer"></button>
+
+                <a href="order-confirmation.html"><button class="poursuivre"></button></a> 
+            </div>
+        </div>
+    </div>
 
     <script src="/elon/javascript/elon.js"></script>
     <script src="/elon/javascript/explain.js"></script>
+    <script src="/elon/javascript/results.js"></script>
 
     </script>
 </body>
