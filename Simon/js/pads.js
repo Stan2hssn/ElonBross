@@ -3,66 +3,98 @@
 ////////////////////////////////////////////////////////////// TODO //////////////////////////////////////////////////////////////////////
 
 function activeOne() {
+  box1.classList.add("clicked1");
+  box1.classList.remove("clicked1");
   box1.classList.add("actived1");
 }
 
 function activeTwo() {
+  box1.classList.add("clicked2");
+  box1.classList.remove("clicked2");
   box2.classList.add("actived2");
 }
 
 function activeThree() {
+  box1.classList.add("clicked3");
+  box1.classList.remove("clicked3");
   box3.classList.add("actived3");
 }
 
 function activeFour() {
+  box1.classList.add("clicked4");
+  box1.classList.remove("clicked4");
   box4.classList.add("actived4");
 }
 
 function activeFive() {
+  box1.classList.add("clicked5");
+  box1.classList.remove("clicked5");
   box5.classList.add("actived5");
 }
 
 function activeSix() {
+  box1.classList.add("clicked6");
+  box1.classList.remove("clicked6");
   box6.classList.add("actived6");
 }
 
 function activeSeven() {
+  box1.classList.add("clicked7");
+  box1.classList.remove("clicked7");
   box7.classList.add("actived7");
 }
 
 function activeEight() {
+  box1.classList.add("clicked8");
+  box1.classList.remove("clicked8");
   box8.classList.add("actived8");
 }
 
 function activeNine() {
+  box1.classList.add("clicked9");
+  box1.classList.remove("clicked9");
   box9.classList.add("actived9");
 }
 
 function activeTen() {
+  box1.classList.add("clicked10");
+  box1.classList.remove("clicked10");
   box10.classList.add("actived10");
 }
 
 function activeEleven() {
+  box1.classList.add("clicked11");
+  box1.classList.remove("clicked11");
   box11.classList.add("actived11");
 }
 
 function activeTwelve() {
+  box1.classList.add("clicked12");
+  box1.classList.remove("clicked12");
   box12.classList.add("actived12");
 }
 
 function activeThirTeen() {
+  box1.classList.add("clicked13");
+  box1.classList.remove("clicked13");
   box13.classList.add("actived13");
 }
 
 function activeFourTeen() {
+  box1.classList.add("clicked14");
+  box1.classList.remove("clicked14");
   box14.classList.add("actived14");
 }
 
 function activeFiveTeen() {
+  box1.classList.add("clicked15");
+  box1.classList.remove("clicked15");
   box15.classList.add("actived15");
 }
 
 function activeSixTeen() {
+  box1.classList.add("clicked16");
+  box1.classList.remove("clicked16");
   box16.classList.add("actived16");
 }
 
