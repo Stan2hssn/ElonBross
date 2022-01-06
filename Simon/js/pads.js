@@ -76,7 +76,6 @@ function one() {
     audio.play();
   }
   noise = true;
-  box1.classList.remove("actived1");
   box1.classList.add("clicked1");
 }
 
