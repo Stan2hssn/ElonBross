@@ -108,6 +108,7 @@ let startPlaying = () => {
 
     let update = () => {
       requestAnimationFrame(update);
+      coinAnimation();
 
       //on applique la gravité quoi qu'il arrive
 
@@ -150,16 +151,81 @@ let startPlaying = () => {
 
     update();
 
-    function newCoin() {
-      var div = document.createElement("div");
+    function coinAnimation() {
+      document.querySelectorAll(".coin").forEach((item) => {
+        item.style.transform = `translate(${Number(
+          item.getAttribute("move")
+        )}px ,${
+          Number(item.getAttribute("transform")) +
+          Number(item.getAttribute("speed"))
+        }px )`;
 
-      div.id = "coin";
+        item.setAttribute(
+          "transform",
+          Number(item.getAttribute("transform")) +
+            Number(item.getAttribute("speed"))
+        );
+
+        item.setAttribute("speed", Number(item.getAttribute("speed")) + 0.1);
+
+        if(Number(item.getAttribute("speed"
+        )) > 0) {
+          item.style.zIndex = "9999";
+        }
+
+        // item.style.transform = `translateX(${Number(
+        //   item.getAttribute("move")
+        // )}px )`;
+
+        // item.setAttribute(
+        //   "move",
+        //   Number(item.getAttribute("move")) +
+        //     Math.sign(item.getAttribute("move"))
+        // ); 
+
+        if(Math.sign(Number(item.getAttribute("move"))) == 1) {
+          item.setAttribute("move", Number(item.getAttribute("move")) + 2)
+        }
+        else{
+          item.setAttribute("move", Number(item.getAttribute("move"))
+           - 2)
+        }
+
+      });
+    }
+
+    function coin() {
+      // var createTracer = document.createElement("div");
+
+      // createTracer.id = "tracerLead";
+
+      // createTracer.className = "tracerLead";
+
+      // document.getElementById('tracer').prepend(createTracer);
+
+      var div = document.createElement("div");
 
       div.className = "coin";
 
-      document.body.appendChild(block);
+      div.setAttribute("speed", -5);
 
-      false;
+      div.setAttribute("transform", 0);
+
+      div.setAttribute(
+        "move",
+        (Math.floor(Math.random() * 2) - 0.5) * 2 
+        
+      );
+
+      console.log(Number(div.getAttribute("move"))
+      );
+
+      document.querySelector("#tracer").appendChild(div);
+
+      setTimeout(function () {
+        // createTracer.remove();
+        div.remove();
+      }, 2000);
     }
 
     console.log(blockRect);
@@ -188,6 +254,8 @@ let startPlaying = () => {
         blockRect = block.getBoundingClientRect();
         let bottom = blockRect.bottom;
 
+        requestAnimationFrame(coin);
+
         count += 100;
         score();
       }
@@ -204,8 +272,6 @@ let startPlaying = () => {
         //on enlève la class 'fly' pour changer le backgound-image
 
         elon.classList.add("fly");
-
-        requestAnimationFrame(newCoin);
 
         //on récupère les données pour le saut
 

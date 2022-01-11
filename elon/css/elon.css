@@ -206,6 +206,7 @@ h1 {
   margin: auto;
   right: 0;
   left: 0;
+  z-index: 1;
 }
 
 .elon {
@@ -222,20 +223,6 @@ h1 {
   left: 0;
 }
 
-.coin {
-  position: absolute;
-  background-image: url(/elon/img/items/ElonBrosAnim.gif);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: auto;
-  height: 84px;
-  margin: 0 auto;
-  right: 0;
-  left: 0;
-  top: 33vh;
-  transition: all 0.3s ease-in-out;
-}
 
 .fly {
   background-image: url(/elon/img/items/ElonJump.png);
@@ -253,9 +240,60 @@ h1 {
   transform: translateY(-10px);
 }
 
-.coinout {
-  transform: translateY(-200px);
+#tracer {
+  position: absolute;
+  width: 100px;
+  height: 84px;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 32vh;
 }
+/* .tracerLead {
+  width: 100px;
+  height: 84px;
+  transform-origin: top right;
+  animation: tracer 2s infinite linear;
+}
+
+@keyframes tracer {
+
+  0%{transform: translateY(0px);
+    transform: rotate(0deg);}
+
+  50%{ transform: translateY(-200px);
+    transform: rotate(180deg);}
+
+  100%{transform: translateY(500px);}
+} */
+
+.coin {
+  position: absolute;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-image: url(/elon/img/items/ElonBrosAnim.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: auto;
+  height: 84px;
+  /* animation: schema 2s infinite ease-in; */
+}
+/* .coinout {
+  transform: translateY(-200px);
+} */
+/* 
+@keyframes schema {
+
+  0%{transform: translateY(0px);
+    transform: rotate(0deg);}
+
+  50%{transform: rotate(180deg);}
+
+  100%{transform: translateY(500px);}
+} */
 
 .pause {
   display: none;

@@ -64,8 +64,8 @@
                 <div class="left">
                     Montant :
                 </div>
-                <div class="score">
-                    5830718,99 €
+                <div id="fake_score" class="score">
+                    317 441 804,31 €
                 </div>
             </div>
 
@@ -155,7 +155,10 @@
 
         document.querySelector('#date').innerHTML = dateLocale;
 
+        document.querySelector('fake_score').innerHTML = `${count}`;
+
     </script>
+    <script src="elon/javascript/elon.js"></script>
 </body>
 
 </html>
