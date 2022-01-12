@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  /* cursor: none; */
+  width: 3024px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.items {
+    cursor: grab;
+    height: 100vh;
+    border: 1px solid red;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.cursor {
+    cursor: grab;
+
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid;
+  z-index: 9999;
+  transform: translate(10px 10px);
+  transition: all 0.03s linear;
+}
+
+.push_mouse {
+  transform: scale(1.2);
+}
+
+.background {
+  position: absolute;
+  background-image: url(HP/SVG/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 0;
+  width: 3024px;
+  height: 472px;
+}
+
+button {
+  position: absolute;
+  top: 20vh;
+}
