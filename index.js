@@ -1,105 +1,74 @@
-// const slider = document.querySelector(".items");
-// // const cursor = document.querySelector(".cursor");
-
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-
-// slider.addEventListener('mousedown', e => {
-//   console.log("work");
-//   isDown = true;
-//   startX = e.pageX - slider.offsetLeft;
-// });
-
-// slider.addEventListener('mouseleave', e => {
-//   let isDown = false;
-//   console.log("worktwise");
-// });
-
-// slider.addEventListener('mouseup', e => {
-//   let isDown = false;
-// });
-
-// slider.addEventListener('mousemove', e => {
-//   //   cursor.style.transform = `translate(${(e.clientX - 10)}px, ${
-//   //     (e.clientY - 10)
-//   //   }px)`;
-//   if (!isDown) return;
-//   const x = e.pageX - slider.offsetLeft;
-//   const walk = x - startX;
-//   slider.scrollLeft = walk;
-//   console.log(walk);
-// });
-
-// const cursor = document.querySelector(".cursor");
-
-// document.addEventListener("mousemove", (e) => {
-//   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-// });
-
-// document.addEventListener("mousedown", (e) => {
-//   cursor.style.transform;
-// });
-
-// const slider = document.querySelector('.item');
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-
-// slider.addEventListener('mousedown', (e) => {
-//   isDown = true;
-//   startX = e.pageX - slider.offsetLeft;
-//   scrollLeft = slider.scrollLeft;
-// });
-
-// slider.addEventListener('mouseleave', () => {
-//   isDown = false;
-// });
-
-// slider.addEventListener('mouseup', () => {
-//   isDown = false;
-// });
-
-// slider.addEventListener('mousemove', (e) => {
-//   if(!isDown) return;
-//   e.preventDefault();
-//   const x = e.pageX - slider.offsetLeft;
-//   const walk = (x - startX) * 3; //scroll-fast
-//   slider.style.transform = "translate-x(scrollLeft - walk)";
-//   console.log(walk);
-// });
-
+const cursor = document.querySelector(".cursor");
 const slider = document.querySelector(".items");
 
 let isDown = false;
-let startX;
-let scrollLeft= [];
+let mousePosPct = undefined;
 
-slider.addEventListener("mousedown", (e) => {
+const windowWidth = window.innerWidth;
+const itemWidth = slider.getBoundingClientRect().width;
+
+document.addEventListener("mousedown", (e) => {
   isDown = true;
-//   console.log(startX);
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
+  cursor.classList.add('pushMouse');
 });
 
-slider.addEventListener("mouseleave", () => {
+document.addEventListener("mouseleave", () => {
   isDown = false;
 });
 
-slider.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", () => {
   isDown = false;
+  cursor.classList.remove('pushMouse');
+
 });
 
 document.addEventListener("mousemove", (e) => {
   if (!isDown) return;
-//   e.preventDefault();
-  const x = e.pageX - slider.offsetLeft
-  const walk = x - startX;
-//   let travel = scrollLeft[0];
-//   console.log("travel", travel);
-slider.scrollLeft = scrollLeft - walk;
-  slider.style.transform = `translateX(${walk + travel}px)`;
-  
-//   scrollLeft.push[slider.style.transform];
 
+  mousePosPct = ((e.clientX - (windowWidth / 2)) / windowWidth) * 2;
+
+  console.log(mousePosPct)
+
+  render()
+});
+
+document.addEventListener('wheel', e => {
+  const increment = 0.08
+
+  if (mousePosPct === undefined) mousePosPct = 0;
+  if (mousePosPct > 0) mousePosPct = mousePosPct - 1;
+
+  if (e.deltaY > 0) {
+    if (mousePosPct - increment > -1) {
+      mousePosPct = mousePosPct - increment;
+    } else {
+      mousePosPct = -1;
+    }
+  } else {
+    console.log('up', increment)
+    if (mousePosPct + increment < 0) {
+      mousePosPct = mousePosPct + increment;
+    } else {
+      mousePosPct = 0;
+    }
+  }
+
+  render();
+})
+
+function render() {
+  const mousePosPx = mousePosPct * (itemWidth - windowWidth);
+
+  if (mousePosPct > 0) {
+    slider.style.transform = `translateX(0px)`;
+  } else if (mousePosPct < -1) {
+    slider.style.transform = `translateX(${itemWidth * -1 - windowWidth * -1}px)`;
+  } else {
+    slider.style.transform = `translateX(${mousePosPx}px)`;
+  }
+}
+
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });

@@ -3,13 +3,15 @@ body {
   /* cursor: none; */
   width: 3024px;
   height: 100vh;
-  overflow: hidden;
 }
 
 .items {
-    cursor: grab;
-    height: 100vh;
-    border: 1px solid red;
+  background-color: black;
+  cursor: grab;
+  height: 100vh;
+  border: 1px solid red;
+  transform-origin: left;
+  transition: all 0.3s ease-out;
 }
 
 body::-webkit-scrollbar {
@@ -17,8 +19,7 @@ body::-webkit-scrollbar {
 }
 
 .cursor {
-    cursor: grab;
-
+  cursor: grab;
   position: absolute;
   width: 20px;
   height: 20px;
@@ -29,13 +30,20 @@ body::-webkit-scrollbar {
   transition: all 0.03s linear;
 }
 
-.push_mouse {
-  transform: scale(1.2);
+/* .cursor::before {
+
+} */
+
+.pushMouse {
+    width: 30px;
+    height: 30px;
 }
+
+
 
 .background {
   position: absolute;
-  background-image: url(HP/SVG/background.svg);
+  background-image: url(HP/background.svg);
   background-size: cover;
   background-repeat: no-repeat;
   bottom: 0;
