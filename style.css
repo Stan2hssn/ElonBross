@@ -1,17 +1,147 @@
 body {
+  background-color: black;
   margin: 0;
-  /* cursor: none; */
+  cursor: none;
   width: 3024px;
   height: 100vh;
+  overflow: hidden;
+  z-index: -9998;
+}
+
+.moveplanet {
+  animation: infinite floatplanet 60s ease-in-out;
+}
+
+@keyframes floatplanet {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  90% {
+    transform: translate(5px, 5px);
+  }
+  10% {
+    transform: translate(10px, 10px);
+  }
+  20% {
+    transform: translate(20px, 0px);
+  }
+  30% {
+    transform: translate(10px, -10px);
+  }
+  40% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-10px, 10px);
+  }
+  60% {
+    transform: translate(-20px, 0px);
+  }
+  70% {
+    transform: translate(-10px, -0px);
+  }
+  100% {
+    transform: translate(-5px, -5px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.moveobject {
+  animation: infinite floatobject 60s ease-in-out;
+}
+
+@keyframes floatobject {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  90% {
+    transform: translate(-5px, -5px);
+  }
+  10% {
+    transform: translate(-10px, -10px);
+  }
+  20% {
+    transform: translate(-20px, -0px);
+  }
+  30% {
+    transform: translate(-10px, 10px);
+  }
+  40% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  60% {
+    transform: translate(20px, 0px);
+  }
+  70% {
+    transform: translate(10px, 0px);
+  }
+  100% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.sky {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-image: url(/HP/Stars.gif);
+  background-size: contain;
+  background-repeat: repeat-x;
+  opacity: 0.7;
+  width: 3024px;
+  height: 620px;
+  animation: infinite sky 60s ease-in-out;
+}
+
+@keyframes sky {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  90% {
+    transform: translate(5px, -5px);
+  }
+  10% {
+    transform: translate(-10px, 10px);
+  }
+  20% {
+    transform: translate(-20px, -0px);
+  }
+  30% {
+    transform: translate(10px, 10px);
+  }
+  40% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-10px, 10px);
+  }
+  60% {
+    transform: translate(-20px, 0px);
+  }
+  70% {
+    transform: translate(10px, 0px);
+  }
+  100% {
+    transform: translate(5px, -5px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
 }
 
 .items {
-  background-color: black;
-  cursor: grab;
+  /* cursor: none; */
   height: 100vh;
-  border: 1px solid red;
   transform-origin: left;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 body::-webkit-scrollbar {
@@ -19,39 +149,229 @@ body::-webkit-scrollbar {
 }
 
 .cursor {
-  cursor: grab;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid;
+  pointer-events: none;
+  background-image: url(cursor/pointer.svg);
+  background-position: center;
+  width: 22px;
+  height: 22px;
+  top: -11px;
+  left: -11px;
   z-index: 9999;
-  transform: translate(10px 10px);
-  transition: all 0.03s linear;
+  transform-origin: center;
+  transition: all 0.03s ease-in-out;
 }
 
-/* .cursor::before {
+.cursor::before,
+.cursor::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  background-image: url(cursor/arrow.svg);
+  background-repeat: no-repeat;
+}
+.cursor::before {
+  transform-origin: right;
+  transform: translate(-50px, -1px);
+}
 
-} */
+.cursor::after {
+  transform-origin: left;
+  transform: rotate(180deg) translate(-70px, 5px);
+}
+
+.pushMouse::before,
+.pushMouse::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background-repeat: no-repeat;
+  transition: all 0.08s ease-in-out;
+}
+
+.pushMouse::before {
+  background-image: url(cursor/arrow.svg);
+  transform: translate(-80px, 0px);
+}
+
+.pushMouse::after {
+  background-image: url(cursor/arrow.svg);
+  transform: rotate(180deg) translate(-110px, 5px);
+}
 
 .pushMouse {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
+  transform-origin: center;
 }
 
-
+.background:hover::before {
+  background-image: url(cursor/svg/arrow_black.svg);
+}
 
 .background {
   position: absolute;
   background-image: url(HP/background.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  bottom: 0;
+  top: 518px;
   width: 3024px;
   height: 472px;
 }
 
-button {
+.fusee {
   position: absolute;
-  top: 20vh;
+  background-image: url(/HP/fusee.png);
+  left: 104px;
+  bottom: 135px;
+  width: 131px;
+  height: 395px;
+  transform: scale(1.2);
 }
+
+.mars {
+  position: absolute;
+  background-image: url(/HP/Mars.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 186px;
+  left: 287px;
+  top: 96px;
+}
+
+/* .game {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  left: 370px;
+  bottom: 64px;
+  gap: 150px;
+} */
+
+.game_sampler {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  left: 370px;
+  bottom: 64px;
+  width: 565px;
+  height: 187px;
+}
+
+.shadow_sampler {
+  width: 217.5px;
+  height: 82.5px;
+  transform: skewX(-54deg) translateY(-4px);
+  background: #c4c4c4;
+}
+
+.sampler {
+  background-image: url(/HP/Sampler.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(-50px);
+  transform-origin: right;
+  width: 743px;
+  height: 187px;
+}
+
+.simon_card {
+  position: absolute;
+  background-image: url(HP/C_Simon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: flex-end;
+  width: 169px;
+  height: 192px;
+  left: 580px;
+  top: 206px;
+}
+
+.simon_card:hover:before {
+  position: absolute;
+  content: "Simon.nes";
+  cursor: pointer;
+  width: fit-content;
+  background-color: black;
+  color: white;
+  font-size: 18pt;
+  padding-top: 16px !important;
+  padding: 8px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Super-Mario-World;
+  align-self: center;
+  appearance: auto;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  align-items: flex-start;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  transform: translate(-20px, -76px);
+}
+
+.lampadaire {
+  position: absolute;
+  background-image: url(HP/lampadaire.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 544px;
+  height: 489px;
+  top: 269px;
+  left: 690px;
+}
+
+.earth {
+  background-image: url(HP/Terrefinal.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 445px;
+  height: 445px;
+  left: 1579px;
+  top: 124px;
+  z-index: -1;
+}
+
+/* button {
+  cursor: pointer;
+  width: fit-content;
+  background-color: black;
+  color: white;
+  font-size: 18pt;
+  padding-top: 16px !important;
+  padding: 8px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Super-Mario-World;
+  align-self: center;
+  appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    align-items: flex-start;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+} */
