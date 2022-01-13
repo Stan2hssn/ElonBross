@@ -21,10 +21,33 @@ let startPlaying = () => {
   let velocity = 0.0;
   let isGrounded = true;
   let coin = document.querySelector(".coin");
-  let audioLose = [document.getElementById("lose"), document.getElementById("lose2"), document.getElementById("lose3")];
-  let audioWin = [document.getElementById("win"), document.getElementById("win2"), document.getElementById("win3")];
-  let audioCoins = [document.getElementById("coins"), document.getElementById("coins")];
+  let audioLose = [
+    document.getElementById("lose"),
+    document.getElementById("lose2"),
+    document.getElementById("lose3"),
+  ];
 
+  let audioWin = [
+    document.getElementById("win"),
+    document.getElementById("win2"),
+    document.getElementById("win3"),
+  ];
+
+  let audioCoins = [
+    document.getElementById("coins"),
+    document.getElementById("coins1"),
+    document.getElementById("coins1"),
+    document.getElementById("coins2"),
+    document.getElementById("coins3"),
+  ];
+
+  let audioMusic = [
+    document.getElementById("music1"),
+    document.getElementById("music2"),
+    document.getElementById("music3"),
+  ];
+
+  let randomMusic = audioMusic[Math.floor(Math.random() * audioMusic.length)];
 
   if ((isPlaying = true)) {
     let startingMinutes = 1 / 2;
@@ -78,20 +101,20 @@ let startPlaying = () => {
       document.querySelector("#result").style.display = "block";
       block.style.display = "none";
       document.body.style.cursor = "auto";
-      if (count > 100) {
+      randomMusic.pause();
+      if (count > 9000) {
         document.querySelector(".score_result").innerHTML = count;
-        coin.style.display = "none";
-        audioWin.getAttribute(Math.floor(Math.random() * 3));
-        audioWin.play();
+        let randomWin = audioWin[Math.floor(Math.random() * audioWin.length)];
+        randomWin.play();
       } else {
         document.querySelector(".score_result").innerHTML = "You suck !";
         document.querySelector(".score_result").style.fontSize = "48pt";
         // document.querySelector(".score_result").classList.add("translate");
         document.querySelector(".bitcoin").style.display = "none";
         document.querySelector(".column_result").classList.add("gap");
-        audioLose.getAttribute(Math.floor(Math.random() * 3) - 1);
-        audioWin.play();
-
+        let randomLose =
+          audioLose[Math.floor(Math.random() * audioLose.length)];
+        randomLose.play();
       }
     }
 
@@ -113,6 +136,8 @@ let startPlaying = () => {
           document.querySelector(".explain").style.display = "none";
           document.querySelector("#playGround").style.display = "block";
           console.log(isPlaying);
+          randomMusic.volume = 0.4;
+          randomMusic.play();
         }
       };
     }, 0);
@@ -250,10 +275,11 @@ let startPlaying = () => {
         audioHurt.volume = 0.5;
         audioHurt.play();
 
-        
+        let randomCoin =
+          audioCoins[Math.floor(Math.random() * audioCoins.length)];
 
-        audioCoins.volume = 0.1;
-        audioCoins.play();
+        randomCoin.volume = 0.1;
+        randomCoin.play();
 
         velocity = 0;
 
