@@ -292,6 +292,7 @@ body::-webkit-scrollbar {
   height: 192px;
   left: 580px;
   top: 206px;
+  z-index: 1;
 }
 
 .simon_card:hover:before {
@@ -333,6 +334,7 @@ body::-webkit-scrollbar {
   height: 489px;
   top: 269px;
   left: 690px;
+  z-index: 0;
 }
 
 .earth {
