@@ -292,7 +292,7 @@ body::-webkit-scrollbar {
   height: 192px;
   left: 580px;
   top: 206px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .simon_card:hover:before {
