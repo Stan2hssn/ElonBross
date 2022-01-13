@@ -140,7 +140,7 @@ let startPlaying = () => {
           randomMusic.play();
         }
       };
-    }, 0);
+    }, 11500);
 
     let update = () => {
       requestAnimationFrame(update);

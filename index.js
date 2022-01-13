@@ -15,17 +15,16 @@ let itemWidth;
 var init = (e) => {
   cursor = document.querySelector(".cursor");
   slider = document.querySelector(".items");
-  
+
   windowWidth = window.innerWidth;
   itemWidth = slider.getBoundingClientRect().width;
-  
+
   document.onmousedown = onMouseDown;
   document.onmouseleave = onMouseUp;
   document.onmouseup = onMouseUp;
   document.onmousemove = onMouseMove;
   document.onwheel = onWheel;
 
-  
   tick();
 };
 
@@ -33,8 +32,27 @@ var onMouseDown = (e) => {
   isDown = true;
   downX = e.clientX;
   previousX = currentX;
-  
+
+  setTimeout(() => {
+    const cache = document.querySelector(".cache");
+    cache.style.opacity = "0";
+  }, 3000);
+
+  document.querySelector("#play").style.opacity = "0";
+
+  setTimeout(() => {
+    document.querySelector("#play").style.display = "none";
+    const cache = document.querySelector(".cache");
+    cache.style.display = "none";
+  }, 5000);
+
+  let audio = document.getElementById("musicHP");
+  audio.play();
+
+  console.log("work");
   console.log("offset ", currentX);
+
+  slider.style.display = "block";
 };
 
 var onMouseUp = (e) => {
@@ -44,14 +62,14 @@ var onMouseUp = (e) => {
 var onMouseMove = (e) => {
   mousePos.x = e.clientX;
   mousePos.y = e.clientY;
-  
+
   if (!isDown) {
     return;
   }
-  
+
   let distance = e.clientX - downX;
   currentX = previousX + distance;
-  
+
   return;
 };
 
@@ -60,7 +78,7 @@ var checkBorder = () => {
     currentX = 0;
     return;
   }
-  
+
   if (currentX < -(itemWidth - windowWidth)) {
     console.log(currentX, -(itemWidth - windowWidth));
     currentX = -(itemWidth - windowWidth);
@@ -71,6 +89,12 @@ var checkBorder = () => {
 var onWheel = (e) => {
   currentX += e.deltaY * WheelSpeed;
 };
+
+// function playMusic() {
+//   let audio = document.getElementById("musicHP");
+//   audio.play();
+//   console.log('work');
+// }
 
 var tick = () => {
   requestAnimationFrame(tick);
@@ -87,9 +111,6 @@ var tick = () => {
 };
 
 window.onload = init();
-
-
-
 
 // const cursor = document.querySelector(".cursor");
 // const background = document.querySelector(".background");
@@ -121,7 +142,7 @@ window.onload = init();
 
 // document.addEventListener("mouseleave", () => {
 //   isDown = false;
-// }); 
+// });
 
 // document.addEventListener("mouseup", () => {
 //   isDown = false;
@@ -156,7 +177,6 @@ window.onload = init();
 // fusee.addEventListener("mouseleave", () => {
 //   cursor.style.backgroundImage = "url('cursor/pointer.svg')";
 // });
-
 
 // document.addEventListener("wheel", (e) => {
 //   const increment = 0.06;

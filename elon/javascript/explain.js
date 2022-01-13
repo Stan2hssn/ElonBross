@@ -1,3 +1,5 @@
+let audio = document.getElementById("text");
+
 function first() {
   var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
@@ -27,7 +29,7 @@ function first() {
       that.tick();
     }, delta);
 
-    let audio = document.getElementById("text");
+    audio.play()
   };
 
   window.setTimeout(function () {
@@ -132,3 +134,7 @@ function third() {
 }
 
 third();
+
+setTimeout(() => {
+  audio = 0;
+}, 11000);

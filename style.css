@@ -8,6 +8,37 @@ body {
   z-index: -9998;
 }
 
+#play {
+  position: absolute;
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: max-content;
+  height: max-content;
+  margin: auto;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: xx-large;
+  z-index: 9998;
+  font-family: Super-Mario-World;
+  transition: all 2s ease-in-out;
+}
+
+.cache {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 110vh;
+  background-color: black;
+  z-index: 9997;
+  transition: all 2s ease-in-out;
+}
+
 .moveplanet {
   animation: infinite floatplanet 60s ease-in-out;
 }
