@@ -71,7 +71,9 @@ function activeSixTeen() {
 ////////////////////////////////////////////////////////////// TODO //////////////////////////////////////////////////////////////////////
 
 function one() {
-  if (noise) {
+  noise = false;
+  noise = true;
+  if (noise && good) {
     let audio = document.getElementById("clip1");
     audio.play();
   }
@@ -80,7 +82,9 @@ function one() {
 }
 
 function two() {
-  if (noise) {
+  noise = false;
+  noise = true;
+  if (noise && good) {
     let audio = document.getElementById("clip2");
     audio.play();
   }
@@ -89,7 +93,9 @@ function two() {
 }
 
 function three() {
-  if (noise) {
+  noise = false;
+  noise = true;
+  if (noise && good) {
     let audio = document.getElementById("clip3");
     audio.play();
   }
@@ -98,7 +104,9 @@ function three() {
 }
 
 function four() {
-  if (noise) {
+  noise = false;
+  noise = true;
+  if (noise && good) {
     let audio = document.getElementById("clip4");
     audio.play();
   }
@@ -107,8 +115,10 @@ function four() {
 }
 
 function five() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip5");
     audio.play();
   }
   noise = true;
@@ -116,8 +126,10 @@ function five() {
 }
 
 function six() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip6");
     audio.play();
   }
   noise = true;
@@ -125,8 +137,10 @@ function six() {
 }
 
 function seven() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip7");
     audio.play();
   }
   noise = true;
@@ -134,8 +148,10 @@ function seven() {
 }
 
 function eight() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip8");
     audio.play();
   }
   noise = true;
@@ -143,8 +159,10 @@ function eight() {
 }
 
 function nine() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip9");
     audio.play();
   }
   noise = true;
@@ -152,8 +170,10 @@ function nine() {
 }
 
 function ten() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip10");
     audio.play();
   }
   noise = true;
@@ -161,8 +181,10 @@ function ten() {
 }
 
 function eleven() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip11");
     audio.play();
   }
   noise = true;
@@ -170,8 +192,10 @@ function eleven() {
 }
 
 function twelve() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip12");
     audio.play();
   }
   noise = true;
@@ -179,8 +203,10 @@ function twelve() {
 }
 
 function thirTeen() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip13");
     audio.play();
   }
   noise = true;
@@ -188,8 +214,10 @@ function thirTeen() {
 }
 
 function fourTeen() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip14");
     audio.play();
   }
   noise = true;
@@ -197,8 +225,10 @@ function fourTeen() {
 }
 
 function fiveTeen() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip15");
     audio.play();
   }
   noise = true;
@@ -206,8 +236,10 @@ function fiveTeen() {
 }
 
 function sixTeen() {
-  if (noise) {
-    let audio = document.getElementById("clip4");
+  noise = false;
+  noise = true;
+  if (noise && good) {
+    let audio = document.getElementById("clip16");
     audio.play();
   }
   noise = true;

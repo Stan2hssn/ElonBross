@@ -16,34 +16,34 @@ body {
   0% {
     transform: translate(0px, 0px);
   }
-  90% {
+  10% {
     transform: translate(5px, 5px);
   }
-  10% {
+  20% {
     transform: translate(10px, 10px);
   }
-  20% {
+  30% {
     transform: translate(20px, 0px);
   }
-  30% {
+  40% {
     transform: translate(10px, -10px);
   }
-  40% {
+  50% {
     transform: translate(0px, 0px);
   }
-  50% {
+  60% {
     transform: translate(-10px, 10px);
   }
-  60% {
+  70% {
     transform: translate(-20px, 0px);
   }
-  70% {
+  80% {
     transform: translate(-10px, -0px);
   }
-  100% {
+  90% {
     transform: translate(-5px, -5px);
   }
-  80% {
+  100% {
     transform: translate(0px, 0px);
   }
 }
@@ -56,34 +56,34 @@ body {
   0% {
     transform: translate(0px, 0px);
   }
-  90% {
+  10% {
     transform: translate(-5px, -5px);
   }
-  10% {
+  20% {
     transform: translate(-10px, -10px);
   }
-  20% {
+  30% {
     transform: translate(-20px, -0px);
   }
-  30% {
+  40% {
     transform: translate(-10px, 10px);
   }
-  40% {
+  50% {
     transform: translate(0px, 0px);
   }
-  50% {
+  60% {
     transform: translate(10px, -10px);
   }
-  60% {
+  70% {
     transform: translate(20px, 0px);
   }
-  70% {
+  80% {
     transform: translate(10px, 0px);
   }
-  100% {
+  900% {
     transform: translate(5px, 5px);
   }
-  80% {
+  100% {
     transform: translate(0px, 0px);
   }
 }
@@ -93,46 +93,47 @@ body {
   top: -20px;
   left: 0;
   background-image: url(/HP/Stars.gif);
-  background-size: contain;
-  background-repeat: repeat-x;
+  background-size: 1512px 982px;
+  background-repeat: repeat;
+  background-position: center;
   opacity: 0.7;
-  width: 3024px;
-  height: 620px;
-  animation: infinite sky 60s ease-in-out;
+  width: 5000px;
+  height: 5000px;
+  animation: infinite sky 100s ease-in-out;
 }
 
 @keyframes sky {
   0% {
     transform: translate(0px, 0px);
   }
+  10% {
+    transform: translate(5px, -5px);
+  }
+  20% {
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    transform: translate(-20px, -0px);
+  }
+  40% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  60% {
+    transform: translate(-10px, 10px);
+  }
+  70% {
+    transform: translate(-20px, 0px);
+  }
+  80% {
+    transform: translate(10px, 0px);
+  }
   90% {
     transform: translate(5px, -5px);
   }
-  10% {
-    transform: translate(-10px, 10px);
-  }
-  20% {
-    transform: translate(-20px, -0px);
-  }
-  30% {
-    transform: translate(10px, 10px);
-  }
-  40% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(-10px, 10px);
-  }
-  60% {
-    transform: translate(-20px, 0px);
-  }
-  70% {
-    transform: translate(10px, 0px);
-  }
   100% {
-    transform: translate(5px, -5px);
-  }
-  80% {
     transform: translate(0px, 0px);
   }
 }
@@ -322,7 +323,7 @@ body::-webkit-scrollbar {
   border-width: 2px;
   border-style: outset;
   border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  transform: translate(-20px, -76px);
+  transform: translate(-28px, -76px);
 }
 
 .lampadaire {
@@ -344,10 +345,127 @@ body::-webkit-scrollbar {
   position: absolute;
   width: 445px;
   height: 445px;
-  left: 1579px;
+  left: 1479px;
   top: 124px;
   z-index: -1;
 }
+
+.game_elon {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 360px;
+  height: 356px;
+  left: 2090px;
+  bottom: 72px;
+}
+
+.shadow_column {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 264px;
+  height: 83px;
+}
+
+.shadow_block {
+  width: 118px;
+  height: 22px;
+  background: #c4c4c4;
+}
+
+.shadow_elon {
+  display: flex;
+  align-self: flex-end;
+  width: 90px;
+  height: 26px;
+  background: #c4c4c4;
+  transform: translate(-11px, 8px);
+}
+
+.shadow_elon::before {
+  content: "";
+  width: 62px;
+  height: 36px;
+  transform: translate(-41px, -5px);
+  background: #c4c4c4;
+}
+
+.shadow_elon::after {
+  content: "";
+  width: 42px;
+  height: 16px;
+  transform: translate(21px, 5px);
+  background: #c4c4c4;
+}
+
+.column_elon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
+}
+
+.block {
+  background-image: url(elon/img/items/BlockTesla.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 106px;
+  height: 106px;
+}
+
+.elon {
+  background-image: url(elon/img/items/Elon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 86px;
+  height: 152px;
+}
+
+.elon_card {
+  position: absolute;
+  background-image: url(HP/C_Elon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-self: flex-end;
+  width: 169px;
+  height: 192px;
+  left: 2310px;
+  top: 206px;
+  z-index: 10;
+}
+
+.elon_card:hover:before {
+    position: absolute;
+    content: "Elon Bross.nes";
+    cursor: pointer;
+    width: fit-content;
+    background-color: black;
+    color: white;
+    font-size: 18pt;
+    padding-top: 16px !important;
+    padding: 8px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: Super-Mario-World;
+    align-self: center;
+    appearance: auto;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    align-items: flex-start;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    transform: translate(-28px, -96px);
+  }
 
 /* button {
   cursor: pointer;
@@ -377,3 +495,6 @@ body::-webkit-scrollbar {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 } */
+a {
+  cursor: none;
+}

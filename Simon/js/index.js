@@ -34,6 +34,8 @@ const startButton = document.querySelector("#start");
 startButton.addEventListener("click", (event) => {
   if (on == false || win) {
     startButton.classList.add("on");
+    let audio = document.getElementById('on');
+    audio.play();
     play();
   }
 });
@@ -41,6 +43,8 @@ startButton.addEventListener("click", (event) => {
 startButton.addEventListener("click", (event) => {
   if (on == true) {
     startButton.classList.remove("on");
+    let audio = document.getElementById('off');
+    audio.play();
     clearInterval(intervalId);
     compTurn = false;
     noneColor();
@@ -180,11 +184,16 @@ function flashColor() {
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1]) {
     good = false;
+    let audio = document.getElementById('error');
+    audio.play();
   }
-  if (playerOrder.length == 10 && good) {
+  if (playerOrder.length == 2 && good) {
+    let audio = document.getElementById('win')
+    setTimeout(() => {
+      audio.play();
+    }, 400);
     winGame();
   }
-
   if (good == false) {
     flashColor();
     turnCounter.innerHTML = "NO!";
@@ -218,6 +227,10 @@ function check() {
 }
 
 function winGame() {
+  compTurn = true;
+  flash = 0;
+  playerOrder = [];
+  intervalId = setInterval(gameTurn, 800);
   flashColor();
   turnCounter.innerHTML = "WIN!";
   on = false;

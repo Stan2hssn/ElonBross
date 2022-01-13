@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Super-Mario-World;
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .explain {
@@ -14,7 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 25vh;
-  padding-top: 20vh;
+  padding-top: 12vh;
 }
 
 .typer {

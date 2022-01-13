@@ -21,6 +21,10 @@ let startPlaying = () => {
   let velocity = 0.0;
   let isGrounded = true;
   let coin = document.querySelector(".coin");
+  let audioLose = [document.getElementById("lose"), document.getElementById("lose2"), document.getElementById("lose3")];
+  let audioWin = [document.getElementById("win"), document.getElementById("win2"), document.getElementById("win3")];
+  let audioCoins = [document.getElementById("coins"), document.getElementById("coins")];
+
 
   if ((isPlaying = true)) {
     let startingMinutes = 1 / 2;
@@ -77,12 +81,17 @@ let startPlaying = () => {
       if (count > 100) {
         document.querySelector(".score_result").innerHTML = count;
         coin.style.display = "none";
+        audioWin.getAttribute(Math.floor(Math.random() * 3));
+        audioWin.play();
       } else {
         document.querySelector(".score_result").innerHTML = "You suck !";
         document.querySelector(".score_result").style.fontSize = "48pt";
         // document.querySelector(".score_result").classList.add("translate");
         document.querySelector(".bitcoin").style.display = "none";
         document.querySelector(".column_result").classList.add("gap");
+        audioLose.getAttribute(Math.floor(Math.random() * 3) - 1);
+        audioWin.play();
+
       }
     }
 
@@ -97,6 +106,8 @@ let startPlaying = () => {
 
       document.body.onkeydown = function (y) {
         if (y.keyCode == 13 && isPlaying == false) {
+          let audio = document.getElementById("begin");
+          audio.play();
           isPlaying = true;
           setInterval(updateCountdown, 1000);
           document.querySelector(".explain").style.display = "none";
@@ -168,8 +179,7 @@ let startPlaying = () => {
 
         item.setAttribute("speed", Number(item.getAttribute("speed")) + 0.1);
 
-        if(Number(item.getAttribute("speed"
-        )) > 0) {
+        if (Number(item.getAttribute("speed")) > 0) {
           item.style.zIndex = "9999";
         }
 
@@ -181,16 +191,13 @@ let startPlaying = () => {
         //   "move",
         //   Number(item.getAttribute("move")) +
         //     Math.sign(item.getAttribute("move"))
-        // ); 
+        // );
 
-        if(Math.sign(Number(item.getAttribute("move"))) == 1) {
-          item.setAttribute("move", Number(item.getAttribute("move")) + 2)
+        if (Math.sign(Number(item.getAttribute("move"))) == 1) {
+          item.setAttribute("move", Number(item.getAttribute("move")) + 2);
+        } else {
+          item.setAttribute("move", Number(item.getAttribute("move")) - 2);
         }
-        else{
-          item.setAttribute("move", Number(item.getAttribute("move"))
-           - 2)
-        }
-
       });
     }
 
@@ -211,14 +218,9 @@ let startPlaying = () => {
 
       div.setAttribute("transform", 0);
 
-      div.setAttribute(
-        "move",
-        (Math.floor(Math.random() * 2) - 0.5) * 2 
-        
-      );
+      div.setAttribute("move", (Math.floor(Math.random() * 2) - 0.5) * 2);
 
-      console.log(Number(div.getAttribute("move"))
-      );
+      console.log(Number(div.getAttribute("move")));
 
       document.querySelector("#tracer").appendChild(div);
 
@@ -244,6 +246,14 @@ let startPlaying = () => {
 
       if (top < bottom) {
         // coin.classList.add(".coinout")
+        let audioHurt = document.getElementById("hurt");
+        audioHurt.volume = 0.5;
+        audioHurt.play();
+
+        
+
+        audioCoins.volume = 0.1;
+        audioCoins.play();
 
         velocity = 0;
 
@@ -266,6 +276,10 @@ let startPlaying = () => {
     document.body.onkeyup = function (e) {
       if (e.keyCode == 32 && isGrounded && isPlaying) {
         console.log("elon");
+
+        let audio = document.getElementById("jump");
+        audio.volume = 0.7;
+        audio.play();
 
         console.log(isPlaying);
 
