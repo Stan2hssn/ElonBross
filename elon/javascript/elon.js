@@ -103,10 +103,12 @@ let startPlaying = () => {
       document.body.style.cursor = "auto";
       randomMusic.pause();
       if (count > 9000) {
+        document.querySelector('.lose').style.display = 'none';
         document.querySelector(".score_result").innerHTML = count;
         let randomWin = audioWin[Math.floor(Math.random() * audioWin.length)];
         randomWin.play();
       } else {
+        document.querySelector('.win').style.display = 'none';
         document.querySelector(".score_result").innerHTML = "You suck !";
         document.querySelector(".score_result").style.fontSize = "48pt";
         // document.querySelector(".score_result").classList.add("translate");
@@ -140,7 +142,7 @@ let startPlaying = () => {
           randomMusic.play();
         }
       };
-    }, 11500);
+    }, 0);
 
     let update = () => {
       requestAnimationFrame(update);

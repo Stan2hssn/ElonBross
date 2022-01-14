@@ -4,8 +4,8 @@ const mars = document.querySelector(".mars");
 const earth = document.querySelector(".earth");
 const simonGame = document.querySelector(".simon_card");
 const elonGame = document.querySelector(".elon_card");
-// const souris = document.querySelector(".pixelCursor");
-// const tesla = document.querySelector(".move_tesla");
+const souris = document.querySelector(".pixelCursor");
+const tesla = document.querySelector(".move_tesla");
 const block = document.querySelector(".block");
 const lancement = document.querySelector('.lancement');
 
@@ -140,6 +140,18 @@ var tick = () => {
   });
 
   document.addEventListener("mousemove", (e) => {
+    tesla.style.transform = `translate(${e.clientX / 30}px, ${
+      e.clientY / 30
+    }px)`;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    souris.style.transform = `translate(${e.clientX / 30}px, ${
+      e.clientY / 30
+    }px)`;
+  });
+
+  document.addEventListener("mousemove", (e) => {
     sky.style.transform = `translate(${e.clientX / 30}px, ${e.clientY / 30}px)`;
   });
 
@@ -205,8 +217,8 @@ var tick = () => {
     simonGame.classList.remove("moveobject");
     elonGame.classList.remove("moveobject");
     sky.classList.remove("float");
-    // tesla.classList.remove("pushMouse moveObject");
-    // souris.classList.remove("pushMouse");
+    tesla.classList.remove("pushMouse moveObject");
+    souris.classList.remove("pushMouse");
     block.classList.remove("moveobject");
   }
 };

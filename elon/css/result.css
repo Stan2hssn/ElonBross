@@ -28,6 +28,10 @@ body {
   height: auto;
 }
 
+.lose {
+  transform: translateY(28px);
+}
+
 #timeOut {
   position: absolute;
   opacity: 0;

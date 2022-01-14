@@ -251,7 +251,6 @@ body::-webkit-scrollbar {
   height: 20px;
 }
 
-
 .cursor::before,
 .cursor::after {
   content: "";
@@ -434,7 +433,7 @@ body::-webkit-scrollbar {
   position: absolute;
   width: 445px;
   height: 445px;
-  left: 1479px;
+  left: 1379px;
   top: 124px;
   z-index: -1;
 }
@@ -446,7 +445,7 @@ body::-webkit-scrollbar {
   align-items: flex-end;
   width: 360px;
   height: 356px;
-  left: 2090px;
+  left: 1900px;
   bottom: 72px;
 }
 
@@ -521,40 +520,73 @@ body::-webkit-scrollbar {
   align-self: flex-end;
   width: 169px;
   height: 192px;
-  left: 2310px;
+  left: 2120px;
   top: 206px;
   z-index: 10;
 }
 
 .elon_card:hover:before {
-    position: absolute;
-    content: "Elon Bross.nes";
-    cursor: pointer;
-    width: fit-content;
-    background-color: black;
-    color: white;
-    font-size: 18pt;
-    padding-top: 16px !important;
-    padding: 8px 16px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0;
-    font-family: Super-Mario-World;
-    align-self: center;
-    appearance: auto;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    align-items: flex-start;
-    border-width: 2px;
-    border-style: outset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    transform: translate(-28px, -96px);
-  }
+  position: absolute;
+  content: "Elon Bross.nes";
+  cursor: pointer;
+  width: fit-content;
+  background-color: black;
+  color: white;
+  font-size: 18pt;
+  padding-top: 16px !important;
+  padding: 8px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Super-Mario-World;
+  align-self: center;
+  appearance: auto;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  align-items: flex-start;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  transform: translate(-28px, -96px);
+}
+
+.tesla {
+  position: absolute;
+  width: 95.42px;
+  height: 111.75px;
+  left: 1200px;
+  top: 100px;
+  background: url(HP/Tesla.png) no-repeat;
+  background-size: contain;
+  transform: rotate(15deg);
+}
+
+.navbar {
+  position: absolute;
+  width: 708.69px;
+  height: 691.49px;
+  left: 2387px;
+  top: 280px;
+  background-image: url(HP/navbar.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(-32px);
+}
+
+.pixelCursor {
+  position: absolute;
+  width: 70px;
+  height: 92px;
+  left: 2650px;
+  top: 227.62px;
+  background: url(HP/Curseur.svg) no-repeat;
+  background-size: contain;
+}
 
 /* button {
   cursor: pointer;
