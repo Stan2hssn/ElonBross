@@ -187,7 +187,7 @@ function check() {
     let audio = document.getElementById('error');
     audio.play();
   }
-  if (playerOrder.length == 2 && good) {
+  if (playerOrder.length == 5 && good) {
     let audio = document.getElementById('win')
     setTimeout(() => {
       audio.play();
@@ -211,7 +211,7 @@ function check() {
         good = true;
         intervalId = setInterval(gameTurn, 800);
       }
-    }, 800);
+    }, 2000);
 
     noise = false;
   }
@@ -235,4 +235,7 @@ function winGame() {
   turnCounter.innerHTML = "WIN!";
   on = false;
   win = true;
+  setTimeout(() => {
+    window.location.href = "fly.html";
+  }, 5000);
 }
