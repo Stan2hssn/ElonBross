@@ -8,6 +8,17 @@ body {
   z-index: -9998;
 }
 
+.lancement {
+  display: none;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  top: 0;
+  width: 3024px;
+  height: 100vh;
+  z-index: 9998;
+}
+
 #play {
   position: absolute;
   background-color: transparent;

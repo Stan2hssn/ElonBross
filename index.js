@@ -7,6 +7,7 @@ const elonGame = document.querySelector(".elon_card");
 // const souris = document.querySelector(".pixelCursor");
 // const tesla = document.querySelector(".move_tesla");
 const block = document.querySelector(".block");
+const lancement = document.querySelector('.lancement');
 
 let cursor;
 let slider;
@@ -142,7 +143,6 @@ var tick = () => {
     sky.style.transform = `translate(${e.clientX / 30}px, ${e.clientY / 30}px)`;
   });
 
-
   if (isDown) {
     cursor.style.transform = `translate(calc(${mousePos.x}px - 50%), calc(${mousePos.y}px - 50%))`;
     cursor.classList.add("pushMouse");
@@ -164,6 +164,15 @@ var tick = () => {
       cursor.classList.remove("cursor2");
       cursor.classList.remove("cursor");
       cursor.classList.remove("cursor3");
+
+      let audioElon = document.getElementById("lancementElon");
+      audioElon.play();
+
+      lancement.style.display = 'block';
+
+      setTimeout(() => {
+        window.location.href = "start.html";
+      }, 300);
     });
 
     simonGame.addEventListener("mouseenter", () => {
@@ -180,8 +189,16 @@ var tick = () => {
       cursor.classList.remove("cursor2");
       cursor.classList.remove("cursor");
       cursor.classList.remove("cursor3");
-    });
 
+      let audioSimon = document.getElementById("lancementSimon");
+      audioSimon.play();
+
+      lancement.style.display = 'block';
+
+      setTimeout(() => {
+        window.location.href = "simon.html";
+      }, 300);
+    });
 
     mars.classList.remove("moveplanet");
     earth.classList.remove("moveplanet");

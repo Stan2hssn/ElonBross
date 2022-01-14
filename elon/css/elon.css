@@ -405,6 +405,7 @@ button {
 .launcher {
   display: flex;
   flex-direction: column;
+  padding-top: 3vh;
   gap: 64px;
 }
 
@@ -416,7 +417,7 @@ button {
 .action_button {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 64px;
 }
 
 a {
