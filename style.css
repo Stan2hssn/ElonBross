@@ -198,8 +198,6 @@ body::-webkit-scrollbar {
   background-position: center;
   width: 22px;
   height: 22px;
-  top: -11px;
-  left: -11px;
   z-index: 9999;
   transform-origin: center;
   transition: all 0.05s ease-in-out;
